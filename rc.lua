@@ -85,6 +85,7 @@ end
 -- 時計ウィジェットを作成
 mytextclock = awful.widget.textclock()
 
+-- その他のウィジェットの変数
 mywibox = {}
 mypromptbox = {}
 mylayoutbox = {}
@@ -163,12 +164,13 @@ for s = 1, screen.count() do
   mywibox[s]:set_widget(layout)
 end
 
+
 -- == マウスの割り当て ==
 root.buttons(awful.util.table.join(
-  -- awful.button({ }, 3, function () mymainmenu:toggle() end),
   awful.button({ }, 4, awful.tag.viewnext),
   awful.button({ }, 5, awful.tag.viewprev)
 ))
+
 
 -- == キーボードの割り当て ==
 -- 全ての状況で使うキー
@@ -274,8 +276,9 @@ clientbuttons = awful.util.table.join(
   awful.button({ modkey }, 3, awful.mouse.client.resize)
 )
 
--- Set keys
+-- キーを実際に割り当てる
 root.keys(globalkeys)
+
 
 -- == ルール ==
 awful.rules.rules = {
@@ -305,6 +308,7 @@ for i, class in ipairs({"MPlayer", "gimp"}) do
   })
 end
 
+
 -- == シグナル ==
 -- 新しいウィンドウができたときに送信されるシグナル
 client.connect_signal("manage", function (c, startup)
@@ -328,3 +332,5 @@ end)
 -- フォーカスされたときと外れたときに色を変える
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+
