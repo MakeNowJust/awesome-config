@@ -40,7 +40,7 @@ end
 
 -- == 変数の定義とか ==
 -- テーマーの読み込み
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
 -- 端末とエディタ
 terminal = "xfce4-terminal"
