@@ -135,7 +135,7 @@ for s = 1, screen.count() do
   -- タグリストを作成
   mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
 
-  -- タスクリストを作成
+  -- ウィンドウ一覧（タスクリスト）を作成
   mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)
 
   -- Wiboxを作成
