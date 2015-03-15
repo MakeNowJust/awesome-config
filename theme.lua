@@ -38,7 +38,7 @@ theme.layout_dwindle         = "/usr/share/awesome/themes/sky/layouts/dwindle.pn
 
 theme.awesome_icon           = "/usr/share/awesome/themes/sky/awesome-icon.png"
 
--- from default for now...
+-- 画像（デフォルトと同じ）
 theme.menu_submenu_icon     = "/usr/share/awesome/themes/default/submenu.png"
 theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
 theme.taglist_squares_unsel = "/usr/share/awesome/themes/default/taglist/squarew.png"
