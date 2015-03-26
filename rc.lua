@@ -207,8 +207,8 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1)      end),
   awful.key({ modkey, "Control" }, "h",     function () awful.tag.incncol( 1)         end),
   awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
-  awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
-  awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
+  --awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
+  awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, 1) end),
 
 
   -- プロンプトの起動
@@ -221,6 +221,15 @@ globalkeys = awful.util.table.join(
       awful.util.eval, nil,
       awful.util.getdir("cache") .. "/history_eval"
     )
+  end),
+
+  -- PrintScreenでスクショを撮る
+  awful.key({                   }, "Print", function ()
+    awful.util.spawn("scrot '%Y%m%d%H%M%S.png' -e 'mv $f ~/Pictures/screenshot/'", false)
+  end),
+  -- Alt+PrintScreenで現在のウィンドウのスクショ
+  awful.key({ "Mod1"            }, "Print", function ()
+    awful.util.spawn("scrot '%Y%m%d%H%M%S.png' -e 'mv $f ~/Pictures/screenshot/'", false)
   end)
 )
 
