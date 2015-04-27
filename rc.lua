@@ -43,7 +43,7 @@ end
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
 -- 端末とエディタ
-terminal = "xfce4-terminal"
+terminal = "gnome-terminal"
 editor = "vim"
 editor_cmd = terminal .. " -e " .. editor
 
