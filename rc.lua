@@ -37,6 +37,15 @@ do
 end
 
 
+-- == 起動時に実行されるコマンド ==
+
+awful.util.shell = "/bin/sh"
+awful.util.spawn_with_shell("pgrep fcitx || fcitx")
+awful.util.spawn_with_shell("pgrep nm-applet || nm-applet")
+awful.util.spawn_with_shell("pgrep xcompmgr || xcompmgr")
+awful.util.spawn_with_shell("pgrep dropbox || dropbox")
+
+
 -- == 変数の定義とか ==
 -- テーマーの読み込み
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
