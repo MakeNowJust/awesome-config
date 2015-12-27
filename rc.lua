@@ -187,7 +187,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
   awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
 
-  -- Mod+j/kでタスクの移動
+  -- Mod+j/kでウィンドウの移動
   awful.key({ modkey,           }, "j", function ()
     awful.client.focus.byidx( 1)
     if client.focus then client.focus:raise() end
@@ -197,7 +197,7 @@ globalkeys = awful.util.table.join(
     if client.focus then client.focus:raise() end
   end),
 
-  -- Mod＋J/Kでタスクの配置の入れ替え
+  -- Mod+J/Kでウィンドウの配置の入れ替え
   awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
   awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
 
