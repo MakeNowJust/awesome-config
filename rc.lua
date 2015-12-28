@@ -205,8 +205,16 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
   -- Mod+Rでawesomeの再起動
   awful.key({ modkey, "Shift"   }, "r", awesome.restart),
+  -- Mod+Control+rでPCの再起動
+  awful.key({ modkey, "Control"   }, "r", function ()
+    awful.util.spawn_with_shell("zenity --question --text='PCを再起動しますか？' && systemctl reboot")
+  end),
   -- Mod+Qでawesomeの終了（ログアウト）
   awful.key({ modkey, "Shift"   }, "q", awesome.quit),
+  -- Mod+Control+qでPCのシャットダウン
+  awful.key({ modkey, "Control" }, "q", function ()
+    awful.util.spawn_with_shell("zenity --question --text='PCを終了しますか？' && systemctl poweroff")
+  end),
 
   -- 配置位置の調整
   awful.key({ modkey,           }, "l",     function () awful.tag.incmwfact( 0.01)    end),
