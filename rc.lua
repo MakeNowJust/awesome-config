@@ -228,14 +228,10 @@ globalkeys = awful.util.table.join(
   -- プロンプトの起動
   awful.key({ modkey            }, "r",     function () mypromptbox[mouse.screen]:run() end),
 
-  awful.key({ modkey            }, "x", function ()
-    awful.prompt.run(
-      { prompt = "Run Lua code: " },
-      mypromptbox[mouse.screen].widget,
-      awful.util.eval, nil,
-      awful.util.getdir("cache") .. "/history_eval"
-    )
-  end),
+  -- 音量の調整
+  awful.key({                   }, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer set Master 5%+") end),
+  awful.key({                   }, "XF86AudioLowerVolume", function () awful.util.spawn("amixer set Master 5%-") end),
+  awful.key({                   }, "XF86AudioMute"       , function () awful.util.spawn("amixer set Master toggle") end),
 
   -- PrintScreenでスクショを撮る
   awful.key({                   }, "Print", function ()
