@@ -249,8 +249,8 @@ clientkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
   -- Mod+Cで終了
   awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
-  -- Mod+Ctrl+Spaceでウィンドウを浮かせる
-  awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
+  -- Mod+Shift+Spaceでウィンドウを浮かせる
+  awful.key({ modkey, "Shift" }, "space",  awful.client.floating.toggle                     ),
   -- Mod+nでタスクリストに戻す
   awful.key({ modkey,           }, "n",      function (c) c.minimized = true end),
   -- Mod+mで最大表示にする/戻す
