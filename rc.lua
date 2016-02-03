@@ -51,10 +51,7 @@ awful.util.spawn_with_shell("pgrep dropbox || dropbox")
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
 -- 端末とエディタ
-terminal = "mlterm"
-editor = "vim"
-editor_cmd = terminal .. " -e " .. editor
-
+terminal = "env LANG=en_US.UTF_8 mlterm"
 modkey = "Mod4"
 
 -- レイアウトの種類
