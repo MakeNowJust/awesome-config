@@ -188,7 +188,7 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end),
 
   -- Mod+Enterで端末の起動
-  awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
+  awful.key({ modkey,           }, "Return", function () awful.util.spawn_with_shell(terminal) end),
   -- Mod+Rでawesomeの再起動
   awful.key({ modkey, "Shift"   }, "r", awesome.restart),
   -- Mod+Control+rでPCの再起動
