@@ -211,6 +211,13 @@ globalkeys = awful.util.table.join(
   awful.key({ modkey, "Control" }, "l",     function () awful.tag.incncol(-1)         end),
   awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts, 1) end),
 
+  awful.key({ modkey, "Control" }, "m",     function ()
+    local c
+    for i, c in ipairs(awful.tag.selected():clients()) do
+      c.minimized = false
+    end
+  end),
+
   -- プロンプトの起動
   awful.key({ modkey            }, "r",     function () mypromptbox[mouse.screen]:run() end),
 
