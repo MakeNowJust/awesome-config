@@ -228,11 +228,11 @@ globalkeys = awful.util.table.join(
 
   -- PrintScreenでスクショを撮る
   awful.key({                   }, "Print", function ()
-    awful.util.spawn("scrot '%Y%m%d%H%M%S.png' -e 'mv $f ~/Pictures/ScreenShot/'")
+    awful.util.spawn("escrotum '%Y%m%d%H%M%S.png' -e 'mv $f ~/Pictures/ScreenShot/'")
   end),
-  -- Alt+PrintScreenで現在のウィンドウのスクショ
-  awful.key({ "Mod1"            }, "Print", function ()
-    awful.util.spawn("scrot -u '%Y%m%d%H%M%S.png' -e 'mv $f ~/Pictures/ScreenShot/'")
+  -- Control+PrintScreenで、矩形選択してスクショ
+  awful.key({ "Control"         }, "Print", function ()
+    awful.util.spawn_with_shell("escrotum -s '%Y%m%d%H%M%S.png' -e 'mv $f ~/Pictures/ScreenShot/'")
   end)
 )
 
