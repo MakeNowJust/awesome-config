@@ -250,6 +250,11 @@ clientkeys = awful.util.table.join(
   awful.key({ modkey,           }, "m", function (c)
     c.maximized_horizontal = not c.maximized_horizontal
     c.maximized_vertical   = not c.maximized_vertical
+  end),
+
+  -- Alt+PrintScreenで現在のウィンドウのスクショ
+  awful.key({ "Mod1"            }, "Print", function ()
+    awful.util.spawn("scrot -u '%Y%m%d%H%M%S.png' -e 'mv $f ~/Pictures/ScreenShot/'")
   end)
 )
 
